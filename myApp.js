@@ -23,9 +23,18 @@ let Practice = new Person({
 });
 
 
-
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+  let me = new Person({
+    name:"Shrishti",age:22,favoriteFoods : ["choleBhature"]
+  })
+  me.save((error,data)=>{
+    if(error){
+      console.log(error);
+    }else{
+      done(null, data);
+    }
+  })
+  
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
